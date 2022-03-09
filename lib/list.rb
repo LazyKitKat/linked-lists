@@ -37,7 +37,7 @@ class LinkedList
             counter +=1
             temp = temp.next_node
         end
-        p counter
+        counter
     end
     def head
         @head.value
@@ -58,5 +58,47 @@ class LinkedList
             count += 1
         end
         temp.value
+    end
+
+    def pop
+        temp = @head
+        until temp.next_node == @tail
+            temp = temp.next_node
+        end
+        temp.next_node = nil
+        @tail = temp
+    end
+
+    def contains(val)
+        temp = @head
+        until temp.next_node.nil?
+            if temp.value == val
+                return true
+            end
+            temp = temp.next_node
+        end
+        return false
+    end
+
+    def find(val)
+        count = 0
+        temp = @head
+        until temp.next_node.nil?
+            if temp.value == val
+                return count
+            end
+            temp = temp.next_node
+            count += 1
+        end
+        return nil
+    end
+
+    def to_s
+        temp = @head
+        until temp.next_node.nil?
+            print "( #{temp.value.to_s} ) -> "
+            temp = temp.next_node
+        end
+        p "nil"
     end
 end

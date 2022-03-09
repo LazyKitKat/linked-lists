@@ -7,3 +7,15 @@ puts "Size: " + a.size.to_s
 p a.head.to_s
 p a.tail.to_s
 p a.at(3)
+
+ 
+a.pop
+p a.size
+
+b = gets.chomp.to_i
+p a.contains(b)
+
+c = gets.chomp.to_i
+p a.find(c)
+
+a.to_s
