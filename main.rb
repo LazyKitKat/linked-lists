@@ -8,14 +8,10 @@ p a.head.to_s
 p a.tail.to_s
 p a.at(3)
 
- 
-a.pop
-p a.size
 
-b = gets.chomp.to_i
-p a.contains(b)
+a.to_s
 
-c = gets.chomp.to_i
-p a.find(c)
+
+a.remove_at(4)
 
 a.to_s

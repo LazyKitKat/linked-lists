@@ -102,7 +102,42 @@ class LinkedList
         p "nil"
     end
 
+
     def insert_at(val, index)
-    
+        count = 0
+        ref_node = @head
+        if index == 0
+            preappend(val)
+        else
+
+            while count < (index - 1)
+                ref_node = ref_node.next_node
+                count += 1
+            end
+           
+            node_after = ref_node.next_node
+            node_before = ref_node
+            new_node = Node.new(val, node_after)
+            node_before.next_node = new_node
+            @tail = new_node if node_after.value.nil?
+        end
     end
+
+    def remove_at(index)
+        ref_node = @head
+        count = 0
+        if index == 0
+            @head = ref_node.next_node
+        else
+            while count < (index - 1)
+                ref_node = ref_node.next_node
+                count += 1
+            end
+            remove_node = ref_node.next_node
+            before_node = ref_node
+            new_after_node = remove_node.next_node
+            before_node.next_node = new_after_node
+            @tail = ref_node if new_after_node.value.nil?
+        end
+    end 
 end
