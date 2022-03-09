@@ -101,4 +101,8 @@ class LinkedList
         end
         p "nil"
     end
+
+    def insert_at(val, index)
+    
+    end
 end
