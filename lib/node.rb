@@ -4,8 +4,4 @@ class Node
         @next_node = next_node
         @value = value
     end
-    def print
-        puts @value.to_s
-        puts @next_node
-    end
 end
